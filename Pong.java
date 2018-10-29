@@ -19,6 +19,7 @@ public class Pong extends Actor
     public int tamanhoPadAltura = 78;
     public int tamanhoPadLargura = 15;
     private GreenfootImage img;
+    //public boolean fezGol = false;
 
     public void act() 
     {
@@ -59,7 +60,7 @@ public class Pong extends Actor
             andarParaCima();
         }
     }
-    
+
     public void possoAndarParaBaixo(){
         Actor barralateral2 = getOneIntersectingObject(BarraLateral2.class);
         if(barralateral2==null){
@@ -134,4 +135,12 @@ public class Pong extends Actor
     public int getTamanhoPadAltura(){
         return this.tamanhoPadAltura;
     }
-}   
+
+    /*public void resetPong(){
+        Jogo mundo = (Jogo) getWorld();
+        if(pong.){
+            setLocation(50, 200);
+        }
+    }*/
+}
+

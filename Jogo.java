@@ -6,19 +6,19 @@ import greenfoot.*;
  */
 public class Jogo extends World
 {
-    private int cicloAtual = 0; 
+    public int cicloAtual = 0; 
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
-    private PlacarPong1 pontuacaoUm;
-    private PlacarPong2 pontuacaoDois;
-    private PlacarMatch numeroPartidas;
-    private Integer ciclo = 0;
+    public PlacarPong1 pontuacaoUm;
+    public PlacarPong2 pontuacaoDois;
+    public PlacarMatch numeroPartidas;
+    public Integer ciclo = 0;
     public PlacarTime placartime;
     public Pong pong;
     public Pong2 pong2;
     public go proximoPasso;
     private boolean iniciarSom = true;
     GreenfootSound sound = new GreenfootSound("SomMundoJogo.wav");
-    
+
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -28,11 +28,11 @@ public class Jogo extends World
         /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
     } 
-    
+
     public void desligaSom(){
-       sound.stop();
+        sound.stop();
     }
-    
+
     public void act()
     {    
         cicloAtual++;
@@ -41,34 +41,34 @@ public class Jogo extends World
         contaCiclo();
         IniciaSom();
     }
-    
+
     public void IniciaSom(){
         if(iniciarSom == true){
-        sound.play();
-       }
+            sound.play();
+        }
     }
-    
+
     public boolean oTempoEstaZerado(){
         return this.placartime.valor == 1; 
     }
-    
+
     public void criadorDeModificadorDeBoost(){
         if(cicloAtual() %  900 == 0 ){
             int x = Greenfoot.getRandomNumber(560) + 78  ;
             int y = Greenfoot.getRandomNumber(310) + 40 ;
             addObject(new ModificadorGanharPowerBoost(), x,y);        
-       }
+        }
     }
-    
+
     public void criadorDeModificadorTamanhoDePad(){
         if(cicloAtual() %  1000 == 0 ){
-        int x = Greenfoot.getRandomNumber(560) + 78  ;
-        int y = Greenfoot.getRandomNumber(310) + 40 ;
-        addObject(new  ModificadorDeTamanhoPad(), x,y);
-        
-       }
+            int x = Greenfoot.getRandomNumber(560) + 78  ;
+            int y = Greenfoot.getRandomNumber(310) + 40 ;
+            addObject(new  ModificadorDeTamanhoPad(), x,y);
+
+        }
     }
-    
+
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
      */
@@ -119,7 +119,7 @@ public class Jogo extends World
         go go = new go();
         addObject(go,354,189);        
     }
-    
+
     public int cicloAtual(){
         return cicloAtual;
     }
@@ -131,15 +131,15 @@ public class Jogo extends World
     public void addPong2(){                
         addObject(new Pong2(), 660, 200);
     }
-    
+
     public void addBola(){                
         addObject(new Bola(), 351, 190);
     }
-    
+
     public void acrescentaPontosUm(int valor){
         pontuacaoUm.addPontos(valor);
     }
-    
+
     public int getCiclo()
     {
         return ciclo;
