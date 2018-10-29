@@ -10,7 +10,7 @@ public class PlacarMatch extends Actor
 
 {
    public int numeroPartidas = 0;
-    
+   GameOver World =(GameOver) getWorld();
    public PlacarMatch(){
         atualizaImagem(numeroPartidas);
    }
@@ -25,8 +25,8 @@ public class PlacarMatch extends Actor
   
    public void saiSom()
     {
-            Jogo World =(Jogo) getWorld();
-            World.desligaSom();
+        Jogo World =(Jogo) getWorld();
+        World.desligaSom();
         }
         
    /**
@@ -35,7 +35,7 @@ public class PlacarMatch extends Actor
      */
     public void act() 
     {
-          atualizaImagem(numeroPartidas);
+        atualizaImagem(numeroPartidas);
    }    
     
    private void atualizaImagem(int valorPartida){

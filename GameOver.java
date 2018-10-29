@@ -7,6 +7,7 @@ import greenfoot.*;
 public class GameOver extends World
 {
     private Integer ciclo = 0;
+    private JogadorUmVence jogadorUmVence;
     private boolean iniciarSom = true;
     GreenfootSound sound = new GreenfootSound("SomGameOver.wav");
     /**
@@ -28,6 +29,7 @@ public class GameOver extends World
         sound.play();
        }
     }
+    
     /**
      * Prepara o mundo para o início do programa.
      * Ou seja: criar os objetos iniciais e adicioná-los ao mundo.
@@ -35,22 +37,27 @@ public class GameOver extends World
     private void prepare()
     {
         ImagemGameOver imagemgameover = new ImagemGameOver();
-        addObject(imagemgameover,351,122);
-        imagemgameover.setLocation(347,116);
-        Restarte restarte = new Restarte();
-        addObject(restarte,339,276);
-        restarte.setLocation(345,244);
-        imagemgameover.setLocation(340,116);
+        addObject(imagemgameover,307,103);
+        imagemgameover.setLocation(349,39);
         VoltarInicio voltarinicio = new VoltarInicio();
-        addObject(voltarinicio,555,276);
-        voltarinicio.setLocation(231,255);
-        restarte.setLocation(415,253);
-        restarte.setLocation(426,253);
+        addObject(voltarinicio,230,344);
+        Restarte restarte = new Restarte();
+        addObject(restarte,441,351);
+        voltarinicio.setLocation(259,339);
+        restarte.setLocation(440,337);
+        restarte.setLocation(436,337);
+        restarte.setLocation(443,337);
+        voltarinicio.setLocation(256,339);
+        imagemgameover.setLocation(354,59);
     }
     
     public void act(){
         contaCiclo();
         IniciaSom();
+    }
+    
+    public void addImgVencUM(){                
+        addObject(new JogadorUmVence(), 351, 190);
     }
     
      /**

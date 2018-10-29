@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Bola
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Bola\ here.\r\n\ @author\ (your\ name)\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment10.params=
+comment10.target=void\ resetRes()
+comment11.params=
+comment11.target=Bola()
+comment2.params=
+comment2.target=void\ pegaModificadorGanharPowerBoost()
+comment3.params=
+comment3.target=void\ vaiBola()
+comment3.text=public\ void\ movimentoAleatorio(boolean\ moveRandom){\r\n\ \ \ \ if(isTouching(BarraCentral.class)\ &&\ moveRandom){\r\n\ \ \ \ changeDirection();\r\n\ \ \ \ }\r\n\ \ \ \ else{\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ changeDirection();\ \ \ \ \ \ \ \ \ \r\n\ \ \ \ }\ \r\n}
+comment4.params=
+comment4.target=void\ movimentoBola()
+comment5.params=
+comment5.target=void\ changeDirection()
+comment6.params=
+comment6.target=void\ somaPontoUm()
+comment7.params=
+comment7.target=void\ somaPontoDois()
+comment8.params=
+comment8.target=void\ addRes()
+comment9.params=
+comment9.target=void\ speedUp()
+numComments=12
