@@ -9,8 +9,33 @@ public class Bola extends Actor
     public int vDirection = 1;//Cima:-1 Baixo=1    
     public boolean controle = true;
 
+    public Bola(){
+        GreenfootImage img = new GreenfootImage(18, 17);
+        img.setColor(Color.WHITE);
+        img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
+        setImage(img);
+        Jogo mundo = (Jogo) getWorld();
+        int newX = getX() + Greenfoot.getRandomNumber(2) * speed;
+        int newY = getY() + Greenfoot.getRandomNumber(2) * speed;
+        setLocation(newX,newY);
+        if(mundo.cicloAtual()>193){
+            if(getX()>=getWorld().getWidth() - 5){
+                setLocation(newX,newY);
+            }
+            if(getY()>=getWorld().getHeight() - 5){
+                setLocation(newX,newY);
+            }
+            if(getX() <= 5){
+                setLocation(newX,newY);
+            }
+            if(getY() <= 5){
+                setLocation(newX,newY);
+            }
+        }
+    }
+    
     public void act()
-    {                               
+    {                                       
         vaiBola();
         changeDirection();
         chutarBola();
@@ -63,7 +88,6 @@ public class Bola extends Actor
         }
     }
 
-
     public void movimentoBola(){
         if(controle){
             int newX = getX() + hDirection * speed;
@@ -71,7 +95,7 @@ public class Bola extends Actor
             setLocation(newX,newY);
         }
     }
-
+    
     public void changeDirection(){
         Pong pong = (Pong)getOneIntersectingObject(Pong.class);
         Pong2 pong2 = (Pong2)getOneIntersectingObject(Pong2.class);         
@@ -126,8 +150,7 @@ public class Bola extends Actor
         }
     }    
 
-    public void resetBolaPontoUm(){
-        Pong pong = (Pong)getOneIntersectingObject(Pong.class);
+    public void resetBolaPontoUm(){        
         if(getX()>=695){
             setLocation(63, 198);
         }
@@ -135,7 +158,7 @@ public class Bola extends Actor
 
     public void resetBolaPontoDois(){
         if(getX()<=5){
-            setLocation(647, 198);
+            setLocation(645, 198);
         }
     }                    
 
@@ -168,13 +191,6 @@ public class Bola extends Actor
         if(res == 8){
             res = 0;
         }
-    }
-
-    public Bola(){
-        GreenfootImage img = new GreenfootImage(18, 17);
-        img.setColor(Color.WHITE);
-        img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
-        setImage(img);
     }
 
     public void movimentacomPong(){
