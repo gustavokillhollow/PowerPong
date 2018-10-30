@@ -26,21 +26,10 @@ public class InputNomeJogadores extends World
     public void prepare(){
         IniciarJogo iniciarjogo = new IniciarJogo();
         addObject(iniciarjogo,299,275);
-
         String Pong = Greenfoot.ask("Nome do Jogador 1: ");
         String Pong2 = Greenfoot.ask( "Nome Jogador 2: ");
-    }
+    }    
     
-=======
-        
-        String Pong = Greenfoot.ask("Nome do Jogador 1: ");
-        String Pong2 = Greenfoot.ask( "Nome do Jogador 2: ");
-    }
-    
-    public void act(){
-       IniciaJogo();
-    }
- 
     
     private void IniciaJogo(){
         sound.play();
@@ -50,5 +39,4 @@ public class InputNomeJogadores extends World
        sound.stop();
     }
 
->>>>>>> hoje
 }
