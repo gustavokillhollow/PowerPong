@@ -8,30 +8,13 @@ public class Bola extends Actor
     public int hDirection = 1;//Direita:1 Esquerda:-1
     public int vDirection = 1;//Cima:-1 Baixo=1    
     public boolean controle = true;
-
+    public int toquePorUltimo;
+    
     public Bola(){
         GreenfootImage img = new GreenfootImage(18, 17);
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
-        Jogo mundo = (Jogo) getWorld();
-        int newX = getX() + Greenfoot.getRandomNumber(2) * speed;
-        int newY = getY() + Greenfoot.getRandomNumber(2) * speed;
-        setLocation(newX,newY);
-        if(mundo.cicloAtual()>193){
-            if(getX()>=getWorld().getWidth() - 5){
-                setLocation(newX,newY);
-            }
-            if(getY()>=getWorld().getHeight() - 5){
-                setLocation(newX,newY);
-            }
-            if(getX() <= 5){
-                setLocation(newX,newY);
-            }
-            if(getY() <= 5){
-                setLocation(newX,newY);
-            }
-        }
     }
     
     public void act()
@@ -49,35 +32,44 @@ public class Bola extends Actor
         resetRes();
         pegaModificadorGanharPowerBoost();
         pegaModificadorTamanhoDoPad();
+        ToqueNoPong();
     }    
 
-    public void pegaModificadorGanharPowerBoost(){
-        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
+    public void pegaModificadorGanharPowerBoost(){ 
         Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
         if (obj != null){
             Greenfoot.playSound("SomGanharPowerBoost.wav");
             getWorldOfType(Jogo.class).removeObject(obj);
-            if(meioDoMundo > getX()){
+            if(toquePorUltimo == 1){
                 getWorldOfType(Jogo.class).pong.addTimeBoost();
             }
-            else if(meioDoMundo < getX()){
+            else if(toquePorUltimo == 2){
                 getWorldOfType(Jogo.class).pong2.addTimeBoost(); 
             }
         }
     }
-
+    
     public void pegaModificadorTamanhoDoPad(){
-        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
         Actor obj = getOneIntersectingObject(ModificadorDeTamanhoPad.class);
         if (obj != null){
             Greenfoot.playSound("SomGanharPowerBoost.wav");
             getWorldOfType(Jogo.class).removeObject(obj);
-            if(meioDoMundo > getX()){
+            if(toquePorUltimo == 1){
                 getWorldOfType(Jogo.class).pong.ModificarTamanhoPad();
             }
-            else if(meioDoMundo < getX()){
+            else if(toquePorUltimo == 2){
                 getWorldOfType(Jogo.class).pong2.ModificarTamanhoPad(); 
             }
+        }
+    }
+    
+    public void ToqueNoPong(){
+        Actor obj = getOneIntersectingObject(Pong.class);
+        Actor obj2 = getOneIntersectingObject(Pong2.class);
+        if(obj != null){
+           toquePorUltimo = 1;
+        }else if(obj2 != null){
+            toquePorUltimo = 2;
         }
     }
 
