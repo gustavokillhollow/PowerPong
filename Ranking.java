@@ -1,9 +1,6 @@
 import java.util.*;
 import greenfoot.*;
 
-/**
- * 
- */
 public class Ranking extends World
 {
     GreenfootSound sound = new GreenfootSound("SomRanking.wav");
@@ -17,17 +14,9 @@ public class Ranking extends World
     }
 
     public void act(){
-        sound.play();
+        ligaSom();
     }
-    
-    /*public String NomeJogador(){
-        
-    }*/
-
-    /**
-     * Prepara o mundo para o início do programa.
-     * Ou seja: criar os objetos iniciais e adicioná-los ao mundo.
-     */
+  
     private void prepare()
     {
         VoltarInicioRanking voltarinicioranking = new VoltarInicioRanking();
@@ -37,6 +26,10 @@ public class Ranking extends World
         JogadorPontuacaoRanking jogadorpontuacaoranking = new JogadorPontuacaoRanking();
         addObject(jogadorpontuacaoranking,366,117);
         jogadorpontuacaoranking.setLocation(354,108);
+    }
+    
+    public void ligaSom(){
+       sound.play();
     }
     
     public void desligaSom(){

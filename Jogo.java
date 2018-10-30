@@ -1,13 +1,7 @@
 import greenfoot.*;
-
-/**
- * Write a description of class MyWorld here.
- * @author (your name) @version (a version number or a date)
- */
 public class Jogo extends World
 {
     private int cicloAtual = 0;
-    /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     private PlacarPong1 pontuacaoUm;
     private PlacarPong2 pontuacaoDois;
     private PlacarMatch numeroPartidas;
@@ -26,7 +20,6 @@ public class Jogo extends World
     public Jogo()
     {
         super(700, 390, 1);
-        /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
     } 
 
@@ -56,7 +49,6 @@ public class Jogo extends World
         criadorDeModificador();
         criadorDeModificadorTamanhoDePad();
         contaCiclo();
-        //IniciaSomGo();
     }
 
     public boolean oTempoEstaZerado(){
@@ -72,22 +64,17 @@ public class Jogo extends World
     }
 
     public void criadorDeModificador(){
-
         if(cicloAtual() % 1000 == 0){
             int x = Greenfoot.getRandomNumber(560) + 78  ;
             int y = Greenfoot.getRandomNumber(310) + 40 ;
             addObject(new ModificadorGanharPowerBoost(), x,y);
-
         }        
 
         if(cicloAtual() %  900 == 0 ){
             int x = Greenfoot.getRandomNumber(560) + 78  ;
             int y = Greenfoot.getRandomNumber(310) + 40 ;
-
             addObject(new ModificadorGanharPowerBoost(), x,y);
-
         }
-
     }
 
 
@@ -150,7 +137,7 @@ public class Jogo extends World
         SpeedUp speedUp = new SpeedUp();
         addObject(speedUp, 354, 189);
     }
-
+   
     public int cicloAtual(){
         return cicloAtual;
     }

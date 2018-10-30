@@ -1,12 +1,5 @@
 
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class BarraPower here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;  
 public class BarPowerPong extends Actor
 {
 
@@ -14,12 +7,6 @@ public class BarPowerPong extends Actor
     int barPowerWidth = 80;
     int barPowerHeight = 15;
     Pong pong;
-
-    /**
-     * Act - do whatever the BarraPower wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-
     
     protected void addedToWorld(World world)
     {
