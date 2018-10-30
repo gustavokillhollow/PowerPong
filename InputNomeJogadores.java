@@ -6,9 +6,10 @@ import java.lang.String.*;
  */
 public class InputNomeJogadores extends World
 {   
-    public String Pong;
-    public String Pong2;
+    public static String Pong;
+    public static String Pong2;
     GreenfootSound sound = new GreenfootSound("NomeJogadores.wav");
+    
     /**
      * Constructor for objects of class InputNomeJogadores.
      */
@@ -16,6 +17,7 @@ public class InputNomeJogadores extends World
     {
         super(700, 390, 1);
         prepare();
+        
     }
     
     /*public void Start(){
@@ -26,15 +28,9 @@ public class InputNomeJogadores extends World
     public void prepare(){
         IniciarJogo iniciarjogo = new IniciarJogo();
         addObject(iniciarjogo,299,275);
-        
-        String Pong = Greenfoot.ask("Nome do Jogador 1: ");
-        String Pong2 = Greenfoot.ask( "Nome do Jogador 2: ");
-    }
-    
-    public void act(){
-       IniciaJogo();
-    }
- 
+        this.Pong = Greenfoot.ask("Nome do Jogador 1: ");
+        this.Pong2 = Greenfoot.ask( "Nome Jogador 2: ");
+    }    
     
     private void IniciaJogo(){
         sound.play();
@@ -43,5 +39,4 @@ public class InputNomeJogadores extends World
     public void desligaSom(){
        sound.stop();
     }
-
 }
