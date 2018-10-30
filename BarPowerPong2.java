@@ -2,23 +2,16 @@ import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
 
-/**
- * 
- */
 public class BarPowerPong2 extends Actor
 {
     int barPowerWidth = 80;
     int barPowerHeight = 15;
     Pong2 pong2;
-    /**
-     * Act - do whatever the BarPowerPong2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         update();
         pong2.ligarBoost();
         pong2.controleBoost();
-
     }
 
     protected void addedToWorld(World world){

@@ -4,7 +4,7 @@ public class Inicio extends World
 {
     private Integer ciclo = 0;
     private ImagemInicial imagemInicial = null;
-    GreenfootSound sound = new GreenfootSound("SomMario.wav");
+    GreenfootSound sound = new GreenfootSound("ErroWindo.wav");
    
     public Inicio()
     {
@@ -13,7 +13,6 @@ public class Inicio extends World
     }
     
     public void act(){
-        //controleSom();
         IniciaJogo();
         contaCiclo();
     }
@@ -30,6 +29,12 @@ public class Inicio extends World
         iniciacréditos.setLocation(321,245);
         IniciaRanking iniciaranking = new IniciaRanking();
         addObject(iniciaranking,556,243);
+        removeObject(iniciarjogo);
+        GetJogadores getjogadores = new GetJogadores();
+        addObject(getjogadores,127,252);
+        getjogadores.setLocation(119,244);
+        removeObject(iniciarjogo);
+        
     }
 
     private void IniciaJogo(){

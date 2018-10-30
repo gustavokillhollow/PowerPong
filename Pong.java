@@ -1,17 +1,7 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-/**
- * Write a description of class Pong here.
- * 
- * @author () 
- * @version ()
- */
 public class Pong extends Actor
 {
-    /**
-     * Act - do whatever the Pong wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     final public int timerBoostTotal = 400;
     boolean statusBoost = false;
     public int timerBoost= 400;
@@ -19,8 +9,6 @@ public class Pong extends Actor
     public int tamanhoPadAltura = 78;
     public int tamanhoPadLargura = 15;
     private GreenfootImage img;
-    //public boolean fezGol = false;
-
     public void act() 
     {
         possoAndarParaCima();
@@ -135,12 +123,5 @@ public class Pong extends Actor
     public int getTamanhoPadAltura(){
         return this.tamanhoPadAltura;
     }
-
-    /*public void resetPong(){
-        Jogo mundo = (Jogo) getWorld();
-        if(pong.){
-            setLocation(50, 200);
-        }
-    }*/
 }
 

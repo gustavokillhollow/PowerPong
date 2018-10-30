@@ -1,3 +1,5 @@
+package PowerPong;
+
 <?xml version="1.0" encoding="UTF-8"?>
 <class name="ImagemFinal" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
     <javadoc xml:space="preserve"/>

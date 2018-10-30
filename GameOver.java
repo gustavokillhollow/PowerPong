@@ -1,22 +1,15 @@
 import java.util.*;
 import greenfoot.*;
 
-/**
- * 
- */
 public class GameOver extends World
 {
     private Integer ciclo = 0;
     private JogadorUmVence jogadorUmVence;
     private boolean iniciarSom = true;
     GreenfootSound sound = new GreenfootSound("SomGameOver.wav");
-    /**
-     * Constructor for objects of class GameOver.
-     */
     public GameOver()
     {
         super(700, 390, 1);
-
         prepare();
     }
 
@@ -30,10 +23,6 @@ public class GameOver extends World
        }
     }
     
-    /**
-     * Prepara o mundo para o início do programa.
-     * Ou seja: criar os objetos iniciais e adicioná-los ao mundo.
-     */
     private void prepare()
     {
         ImagemGameOver imagemgameover = new ImagemGameOver();
@@ -59,10 +48,12 @@ public class GameOver extends World
     public void addImgVencUM(){                
         addObject(new JogadorUmVence(), 351, 190);
     }
+   
+    /*public void addImgPongUm(){
+     Jogo World =(Jogo) getWorld();
+     World.acrescentaPontosUm(int valor);
+    }*/
     
-     /**
-     * 
-     */
     public void contaCiclo()
     {
         ciclo=ciclo+1;
@@ -71,9 +62,6 @@ public class GameOver extends World
         }
     }
 
-    /**
-     * 
-     */
     public int getCiclo()
     {
         return ciclo;

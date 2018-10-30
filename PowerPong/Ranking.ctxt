@@ -9,4 +9,6 @@ comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ prepare()
 comment3.text=\r\n\ Prepara\ o\ mundo\ para\ o\ in\u00EDcio\ do\ programa.\r\n\ Ou\ seja\:\ criar\ os\ objetos\ iniciais\ e\ adicion\u00E1-los\ ao\ mundo.\r\n
-numComments=4
+comment4.params=
+comment4.target=void\ desligaSom()
+numComments=5

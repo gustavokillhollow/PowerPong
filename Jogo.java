@@ -1,17 +1,11 @@
 import greenfoot.*;
-
-/**
- * Write a description of class MyWorld here.
- * @author (your name) @version (a version number or a date)
- */
 public class Jogo extends World
 {
-    public int cicloAtual = 0; 
-    /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
-    public PlacarPong1 pontuacaoUm;
-    public PlacarPong2 pontuacaoDois;
-    public PlacarMatch numeroPartidas;
-    public Integer ciclo = 0;
+    private int cicloAtual = 0;
+    private PlacarPong1 pontuacaoUm;
+    private PlacarPong2 pontuacaoDois;
+    private PlacarMatch numeroPartidas;
+    private Integer ciclo = 0;
     public PlacarTime placartime;
     public Pong pong;
     public Pong2 pong2;
@@ -27,7 +21,6 @@ public class Jogo extends World
     public Jogo()
     {
         super(700, 390, 1);
-        /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
     } 
 
@@ -57,7 +50,6 @@ public class Jogo extends World
         criadorDeModificador();
         criadorDeModificadorTamanhoDePad();
         contaCiclo();
-        //IniciaSomGo();
     }
 
     public boolean oTempoEstaZerado(){
@@ -81,22 +73,17 @@ public class Jogo extends World
     }
 
     public void criadorDeModificador(){
-
-        if(cicloAtual() % 1000 == 0){
+        if(cicloAtual() % 1500== 0){
             int x = Greenfoot.getRandomNumber(560) + 78  ;
             int y = Greenfoot.getRandomNumber(310) + 40 ;
             addObject(new ModificadorGanharPowerBoost(), x,y);
-
         }        
 
-        if(cicloAtual() %  900 == 0 ){
+        if(cicloAtual() %  1100 == 0 ){
             int x = Greenfoot.getRandomNumber(560) + 78  ;
             int y = Greenfoot.getRandomNumber(310) + 40 ;
-
             addObject(new ModificadorGanharPowerBoost(), x,y);
-
         }
-
     }
 
     public void criadorDeModificadorTamanhoDePad(){
@@ -158,7 +145,7 @@ public class Jogo extends World
         SpeedUp speedUp = new SpeedUp();
         addObject(speedUp, 354, 189);
     }
-
+   
     public int cicloAtual(){
         return cicloAtual;
     }

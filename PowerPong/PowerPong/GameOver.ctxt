@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=GameOver
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=GameOver()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameOver.\r\n
+comment2.params=
+comment2.target=void\ prepare()
+comment2.text=\r\n\ Prepara\ o\ mundo\ para\ o\ in\u00EDcio\ do\ programa.\r\n\ Ou\ seja\:\ criar\ os\ objetos\ iniciais\ e\ adicion\u00E1-los\ ao\ mundo.\r\n
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ contaCiclo()
+comment4.text=\r\n\ \r\n
+comment5.params=
+comment5.target=int\ getCiclo()
+comment5.text=\r\n\ \r\n
+numComments=6
