@@ -185,12 +185,12 @@ public class Bola extends Actor
         if(controle == false && isTouching(Pong.class)){ 
             if(getY()<=321){    
                 if(Greenfoot.isKeyDown("S")){
-                    this.setLocation(getX(), getY() +3);
+                    this.setLocation(getX(), getY() + 3);
                 }
             }
             if(getY()>=63){ 
                 if(Greenfoot.isKeyDown("W")){
-                    this.setLocation(getX(), getY() -3);
+                    this.setLocation(getX(), getY() - 3);
                 }
             }
         }
@@ -200,12 +200,12 @@ public class Bola extends Actor
         if(controle == false && isTouching(Pong2.class)){ 
             if(getY()<=321){    
                 if(Greenfoot.isKeyDown("down")){
-                    this.setLocation(getX(), getY() +3);
+                    this.setLocation(getX(), getY() + 3);
                 }
             }
             if(getY()>=63){ 
                 if(Greenfoot.isKeyDown("up")){
-                    this.setLocation(getX(), getY() -3);
+                    this.setLocation(getX(), getY() - 3);
                 }
             }
         }
