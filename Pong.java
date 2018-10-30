@@ -48,7 +48,7 @@ public class Pong extends Actor
             andarParaCima();
         }
     }
-    
+
     public void possoAndarParaBaixo(){
         Actor barralateral2 = getOneIntersectingObject(BarraLateral2.class);
         if(barralateral2==null){
@@ -123,4 +123,5 @@ public class Pong extends Actor
     public int getTamanhoPadAltura(){
         return this.tamanhoPadAltura;
     }
-}   
+}
+

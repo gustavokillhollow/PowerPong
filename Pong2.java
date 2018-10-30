@@ -124,4 +124,10 @@ public class Pong2 extends Actor
     public int getTamanhoPadAltura(){
         return this.tamanhoPadAltura;
     }
+    
+    /*public void resetPong2(){
+        Jogo mundo = (Jogo) getWorld();
+        if(mundo.acrescentaPontosDois())
+            setLocation(660, 200);
+    }*/
 }   
