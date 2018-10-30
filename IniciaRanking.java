@@ -7,7 +7,7 @@ public class IniciaRanking extends Actor
     {
          if (Greenfoot.mouseClicked(this)) {
             saiSom();
-            Greenfoot.setWorld( new  Ranking());
+            Greenfoot.setWorld( new  Ranking() );
         }
     }
     

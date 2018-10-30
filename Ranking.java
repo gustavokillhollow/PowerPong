@@ -4,6 +4,7 @@ import greenfoot.*;
 public class Ranking extends World
 {
     GreenfootSound sound = new GreenfootSound("SomRanking.wav");
+    Nome nomeJogadores =  new Nome();
     /**
      * Constructor for objects of class Ranking.
      */
@@ -12,9 +13,12 @@ public class Ranking extends World
         super(700, 390, 1);
         prepare();
     }
-
+   
     public void act(){
         ligaSom();
+        Input();
+        showText(nomeJogadores.getNome1(), 170, 133);
+        showText(nomeJogadores.getNome2(), 170, 160);
     }
   
     private void prepare()
@@ -35,4 +39,8 @@ public class Ranking extends World
     public void desligaSom(){
        sound.stop();
     }
+    public void Input(){
+     
+     
+    }    
 }
