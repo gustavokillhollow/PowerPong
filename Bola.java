@@ -1,10 +1,6 @@
 import lang.stride.*;
 import greenfoot.*;
 
-/**
- * Write a description of class Bola here.
- * @author (your name) @version (a version number or a date)
- */
 public class Bola extends Actor
 {
     public int res = 0;//variavel satanica pra fazer o codigo dar certo sem pacto

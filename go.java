@@ -1,19 +1,8 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class go here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;  
 public class go extends Actor
 {
     public int proximoPasso = 1;
     public static final int Taxa_de_Atualizacao = 50;
-    /**
-     * Act - do whatever the go wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
         saiGo();
@@ -26,19 +15,14 @@ public class go extends Actor
             proximoPasso++;
         }
 
-        /*if(proximoPasso == 1){
-            Greenfoot.playSound("ContadorGo");
-        }*/
         if(proximoPasso == 1){
             ligaSomGo();
         }
+        
         if(proximoPasso > 5){
             mundo.iniciarSomGo = false;
             desligaSomGo();
             ligaSom();
-        }
-        
-        if(proximoPasso > 5){
             proximoPasso = 5;
         }
         

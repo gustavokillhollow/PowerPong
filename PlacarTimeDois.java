@@ -1,20 +1,10 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class PlacarTime here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;  
 public class PlacarTimeDois extends Actor
 {
     public int valorSegundo = 0;
     public int valorMinuto = 0;
     public int valor = 0;
-    /**
-     * Act - do whatever the PlacarTime wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     public void act() 
     {
         atualizaImagem(valor);

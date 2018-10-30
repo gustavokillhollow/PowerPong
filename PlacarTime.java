@@ -5,10 +5,7 @@ import greenfoot.*;
  */
 public class PlacarTime extends Actor
 {
-    /* WARNING: This file is auto-generated and any changes to it will be overwritten*/
-    /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     public  int valor = 300;
-
     /**
      * 
      */
@@ -17,9 +14,6 @@ public class PlacarTime extends Actor
         atualizaImagem(valor);        
     }    
 
-    /**
-     * Act - do whatever the PlacarTime wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         Jogo mundo = (Jogo) getWorld();
@@ -30,18 +24,12 @@ public class PlacarTime extends Actor
         }        
     }
 
-    /**
-     * 
-     */
     private void atualizaImagem(int valor)
     {
         GreenfootImage Time =  new  GreenfootImage(converteNumero(valor), 24, Color.WHITE,  new  Color(0, 0, 0, 0), Color.BLACK);
         setImage(Time);
     }
 
-    /**
-     * 
-     */
     public void atualizaImagem()
     {
         float resultado = 300;
@@ -58,9 +46,6 @@ public class PlacarTime extends Actor
         }
     }
 
-    /**
-     * 
-     */
     private String converteNumero(int valor)
     {
         return String.format("%03d", valor);
