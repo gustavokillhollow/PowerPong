@@ -5,11 +5,11 @@ import greenfoot.*;
 /**
  * 
  */
-public class ImagemRanking extends Actor
+public class NomeJogador1 extends Actor
 {
 
     /**
-     * Act - do whatever the ImagemRanking wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - do whatever the NomeJogador1 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
