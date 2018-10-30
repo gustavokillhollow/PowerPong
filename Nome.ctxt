@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Nome
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Nome\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=Nome()
+comment3.params=
+comment3.target=java.lang.String\ getNome1()
+comment4.params=
+comment4.target=java.lang.String\ getNome2()
+numComments=5
