@@ -15,7 +15,13 @@ public class IniciarJogo extends Actor
     public void act()
     {
         if (Greenfoot.mouseClicked(this)) {
+            //saiSom();
             Greenfoot.setWorld( new  Jogo());
         }
     }
+    public void saiSom()
+    {
+            Inicio World =(Inicio) getWorld();
+            World.desligaSom();
+        }
 }

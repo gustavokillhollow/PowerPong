@@ -8,7 +8,7 @@ import greenfoot.*;
  */
 public class Jogo extends World
 {
-    private int cicloAtual = 0; 
+    private int cicloAtual = 0;
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     private PlacarPong1 pontuacaoUm;
     private PlacarPong2 pontuacaoDois;
@@ -18,7 +18,10 @@ public class Jogo extends World
     public Pong pong;
     public Pong2 pong2;
     public go proximoPasso;
-    
+    public boolean iniciarSom = true;
+    public boolean iniciarSomGo = true;
+    GreenfootSound sound = new GreenfootSound("SomMundoJogo.wav");
+    GreenfootSound soundGo = new GreenfootSound("ContadorGo.wav");
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -28,33 +31,80 @@ public class Jogo extends World
         /* Create a new world with 600x400 cells with a cell size of 1x1 pixels.*/
         prepare();
     } 
-    
+
+    public void IniciaSom(){
+        if(iniciarSom == true){
+            sound.play();
+        }
+    }
+
+    public void desligaSom(){
+        sound.stop();
+    }
+
+    public void IniciaSomGo(){
+        if(iniciarSomGo == true){
+            soundGo.play();
+        }
+    }
+
+    public void desligaSomGo(){
+        soundGo.stop();
+    }
+
     public void act()
     {    
         cicloAtual++;
         criadorDeModificador();
+        criadorDeModificadorTamanhoDePad();
         contaCiclo();
+        //IniciaSomGo();
     }
-    
+
     public boolean oTempoEstaZerado(){
         return this.placartime.valor == 1; 
     }
-    
-    public void criadorDeModificador(){
-        if(cicloAtual() %  900 == 0 ){
-        int x = Greenfoot.getRandomNumber(560) + 78  ;
-        int y = Greenfoot.getRandomNumber(310) + 40 ;
-        addObject(new ModificadorGanharPowerBoost(), x,y);
-        
-       }
+
+    public boolean tempoQuaseZero(){
+        return this.placartime.valor == 3;
     }
-    
-   
+
+    public boolean tempoBaixo(){
+        return this.placartime.valor == 2;
+    }
+
+    public void criadorDeModificador(){
+
+        if(cicloAtual() % 1000 == 0){
+            int x = Greenfoot.getRandomNumber(560) + 78  ;
+            int y = Greenfoot.getRandomNumber(310) + 40 ;
+            addObject(new ModificadorGanharPowerBoost(), x,y);
+
+        }        
+
+        if(cicloAtual() %  900 == 0 ){
+            int x = Greenfoot.getRandomNumber(560) + 78  ;
+            int y = Greenfoot.getRandomNumber(310) + 40 ;
+
+            addObject(new ModificadorGanharPowerBoost(), x,y);
+
+        }
+
+    }
+
+
+    public void criadorDeModificadorTamanhoDePad(){
+        if(cicloAtual() %  1000 == 0 ){
+            int x = Greenfoot.getRandomNumber(560) + 78  ;
+            int y = Greenfoot.getRandomNumber(310) + 40 ;
+            addObject(new  ModificadorDeTamanhoPad(), x,y);
+        }
+    }
+
     /**
      * Prepare the world for the start of the program. That is: create the initial objects and add them to the world.
      */
-    public void prepare()
-    {
+    public void prepare(){
         BarraLateral barraLateral =  new  BarraLateral();
         addObject(barraLateral, 350, 22);
         BarraLateral2 barraLateral2 =  new  BarraLateral2();
@@ -98,21 +148,31 @@ public class Jogo extends World
         BarPowerPong2 barPowerPong2 = new BarPowerPong2();
         addObject(barPowerPong2,  645, 380);
         go go = new go();
-        addObject(go,354,189);        
+        addObject(go,354,189);
+        SpeedUp speedUp = new SpeedUp();
+        addObject(speedUp, 354, 189);
     }
 
     public int cicloAtual(){
         return cicloAtual;
     }
 
+    public void addPong(){                
+        addObject(new Pong(), 50, 200);
+    }
+
+    public void addPong2(){                
+        addObject(new Pong2(), 660, 200);
+    }
+
     public void addBola(){                
         addObject(new Bola(), 351, 190);
     }
-    
+
     public void acrescentaPontosUm(int valor){
         pontuacaoUm.addPontos(valor);
     }
-    
+
     public int getCiclo()
     {
         return ciclo;
@@ -131,5 +191,4 @@ public class Jogo extends World
     public void acrescentaPontosDois(int valor){
         pontuacaoDois.addPontos(valor);        
     }
-
 }

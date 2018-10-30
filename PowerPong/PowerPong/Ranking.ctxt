@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Ranking
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=Ranking()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Ranking.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ prepare()
+comment3.text=\r\n\ Prepara\ o\ mundo\ para\ o\ in\u00EDcio\ do\ programa.\r\n\ Ou\ seja\:\ criar\ os\ objetos\ iniciais\ e\ adicion\u00E1-los\ ao\ mundo.\r\n
+numComments=4

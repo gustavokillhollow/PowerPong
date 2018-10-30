@@ -1,27 +1,26 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class Placar here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;  
 public class PlacarPong1 extends Actor
 {
     private int pontuacaoUm = 0;
-
+    GameOver World =(GameOver) getWorld();
     public PlacarPong1(){
         atualizaImagem(pontuacaoUm);
     }
 
     public void addPontos(int valor){
         pontuacaoUm += valor; 
+         if(pontuacaoUm >= 5){
+            saiSom();
+            Greenfoot.setWorld( new  GameOver());
+       }
     }
 
-    /**
-     * Act - do whatever the PlacarPong1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public void saiSom()
+    {
+        Jogo World =(Jogo) getWorld();
+        World.desligaSom();
+        }
+        
     public void act() 
     {
         atualizaImagem(pontuacaoUm);
