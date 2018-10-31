@@ -27,7 +27,7 @@ public class InputNomeJogadores extends World
 
     public void prepare(){
         IniciarJogo iniciarjogo = new IniciarJogo();
-        addObject(iniciarjogo,299,275);
+        addObject(iniciarjogo,358, 195);
         this.Pong = Greenfoot.ask("Nome do Jogador 1: ");
         this.Pong2 = Greenfoot.ask( "Nome Jogador 2: ");
     }    

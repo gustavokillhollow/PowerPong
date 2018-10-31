@@ -21,20 +21,17 @@ public class Inicio extends World
     {
         adicionaImagem();
         IniciarJogo iniciarjogo = new IniciarJogo();
-        addObject(iniciarjogo,129,252);
+        addObject(iniciarjogo,294,233);
+        iniciarjogo.setLocation(334,268);
+        removeObject(iniciarjogo);
+
         IniciaCréditos iniciacréditos = new IniciaCréditos();
-        addObject(iniciacréditos,324,245);
-        iniciarjogo.setLocation(116,245);
-        iniciacréditos.setLocation(314,245);
-        iniciacréditos.setLocation(321,245);
-        IniciaRanking iniciaranking = new IniciaRanking();
-        addObject(iniciaranking,556,243);
-        removeObject(iniciarjogo);
+        addObject(iniciacréditos,542,241);
+
         GetJogadores getjogadores = new GetJogadores();
-        addObject(getjogadores,127,252);
-        getjogadores.setLocation(119,244);
-        removeObject(iniciarjogo);
-        
+        addObject(getjogadores,119,244);
+
+       
     }
 
     private void IniciaJogo(){
