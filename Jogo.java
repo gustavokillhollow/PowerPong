@@ -14,6 +14,7 @@ public class Jogo extends World
     public boolean iniciarSomGo = true;
     GreenfootSound sound = new GreenfootSound("SomMundoJogo.wav");
     GreenfootSound soundGo = new GreenfootSound("ContadorGo.wav");
+    
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -55,6 +56,14 @@ public class Jogo extends World
         return this.placartime.valor == 1; 
     }
 
+    public void criadorDeModificadorDeBoost(){
+        if(cicloAtual() %  900 == 0 ){
+            int x = Greenfoot.getRandomNumber(560) + 78  ;
+            int y = Greenfoot.getRandomNumber(310) + 40 ;
+            addObject(new ModificadorGanharPowerBoost(), x,y);        
+        }
+    }
+
     public boolean tempoQuaseZero(){
         return this.placartime.valor == 3;
     }
@@ -84,7 +93,6 @@ public class Jogo extends World
             addObject(new ModificadorGanharPowerBoost(), x,y);
         }
     }
-
 
     public void criadorDeModificadorTamanhoDePad(){
         if(cicloAtual() %  1000 == 0 ){

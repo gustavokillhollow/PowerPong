@@ -1,22 +1,25 @@
 import lang.stride.*;
 import greenfoot.*;
 
+/**
+ * Write a description of class Bola here.
+ * @author (your name) @version (a version number or a date)
+ */
 public class Bola extends Actor
 {
-    public int res = 0;//variavel satanica pra fazer o codigo dar certo sem pacto
+    public int res = 0;
     public int speed = 3;
     public int hDirection = 1;//Direita:1 Esquerda:-1
     public int vDirection = 1;//Cima:-1 Baixo=1    
     public boolean controle = true;
-    public int toquePorUltimo;
-    
+    public boolean shotInicial = true;
 
     public void act()
     {                               
+        disparoInicial();
         vaiBola();
         changeDirection();
         chutarBola();
-        chutarBola2();
         movimentacomPong();
         movimentacomPong2();
         somaPontoUm();
@@ -26,44 +29,35 @@ public class Bola extends Actor
         resetRes();
         pegaModificadorGanharPowerBoost();
         pegaModificadorTamanhoDoPad();
-        ToqueNoPong();
     }    
 
-    public void pegaModificadorGanharPowerBoost(){ 
+    public void pegaModificadorGanharPowerBoost(){
+        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
         Actor obj = getOneIntersectingObject(ModificadorGanharPowerBoost.class);
         if (obj != null){
             Greenfoot.playSound("SomGanharPowerBoost.wav");
             getWorldOfType(Jogo.class).removeObject(obj);
-            if(toquePorUltimo == 1){
+            if(meioDoMundo > getX()){
                 getWorldOfType(Jogo.class).pong.addTimeBoost();
             }
-            else if(toquePorUltimo == 2){
+            else if(meioDoMundo < getX()){
                 getWorldOfType(Jogo.class).pong2.addTimeBoost(); 
             }
         }
     }
-    
+
     public void pegaModificadorTamanhoDoPad(){
+        int meioDoMundo = getWorldOfType(Jogo.class).getWidth() / 2; 
         Actor obj = getOneIntersectingObject(ModificadorDeTamanhoPad.class);
         if (obj != null){
             Greenfoot.playSound("SomGanharPowerBoost.wav");
             getWorldOfType(Jogo.class).removeObject(obj);
-            if(toquePorUltimo == 1){
+            if(meioDoMundo > getX()){
                 getWorldOfType(Jogo.class).pong.ModificarTamanhoPad();
             }
-            else if(toquePorUltimo == 2){
+            else if(meioDoMundo < getX()){
                 getWorldOfType(Jogo.class).pong2.ModificarTamanhoPad(); 
             }
-        }
-    }
-    
-    public void ToqueNoPong(){
-        Actor obj = getOneIntersectingObject(Pong.class);
-        Actor obj2 = getOneIntersectingObject(Pong2.class);
-        if(obj != null){
-           toquePorUltimo = 1;
-        }else if(obj2 != null){
-            toquePorUltimo = 2;
         }
     }
 
@@ -73,7 +67,6 @@ public class Bola extends Actor
             movimentoBola();
         }
     }
-
 
     public void movimentoBola(){
         if(controle){
@@ -126,27 +119,21 @@ public class Bola extends Actor
     }
 
     public void chutarBola(){        
-        if(Greenfoot.isKeyDown("space") && isTouching(Pong.class)){
+        if(Greenfoot.isKeyDown("space")){
             this.controle = true;
         }
     }
 
-    public void chutarBola2(){        
-        if(Greenfoot.isKeyDown("backspace") && isTouching(Pong2.class)){
-            this.controle = true;
-        }
-    }    
-
     public void resetBolaPontoUm(){
         Pong pong = (Pong)getOneIntersectingObject(Pong.class);
         if(getX()>=695){
-            setLocation(63, 198);
+            setLocation(67, 198);
         }
     }
 
     public void resetBolaPontoDois(){
         if(getX()<=5){
-            setLocation(647, 198);
+            setLocation(644, 198);
         }
     }                    
 
@@ -186,10 +173,25 @@ public class Bola extends Actor
         img.setColor(Color.WHITE);
         img.fillRect(0, 0,img.getWidth()-1, img.getHeight()-1);
         setImage(img);
+    } 
+
+    public void disparoInicial(){
+        int newX = getX() + hDirection * speed* -1;
+        int newY = getY() + vDirection * speed* -1;
+        setLocation(newX,newY);
+        Jogo mundo = (Jogo) getWorld();
+        if(shotInicial == true){
+            if(mundo.cicloAtual()>193){
+                movimentoBola();
+            }
+            else if(mundo.cicloAtual()>193){
+                setLocation(newX,newY);
+            }        
+        }
     }
 
     public void movimentacomPong(){
-        if(controle == false && isTouching(Pong.class)){ 
+        if(controle == false){ 
             if(getY()<=321){    
                 if(Greenfoot.isKeyDown("S")){
                     this.setLocation(getX(), getY() + 3);
@@ -204,7 +206,7 @@ public class Bola extends Actor
     }
 
     public void movimentacomPong2(){
-        if(controle == false && isTouching(Pong2.class)){ 
+        if(controle == false){ 
             if(getY()<=321){    
                 if(Greenfoot.isKeyDown("down")){
                     this.setLocation(getX(), getY() + 3);
@@ -218,3 +220,4 @@ public class Bola extends Actor
         }
     }
 }
+
