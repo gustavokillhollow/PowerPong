@@ -13,7 +13,7 @@ public class IniciaRanking extends Actor
     
     public void saiSom()
     {
-            Inicio World =(Inicio) getWorld();
+            GameOver World = (GameOver) getWorld();
             World.desligaSom();
         }
 }
