@@ -2,8 +2,8 @@ import greenfoot.*;
 public class Jogo extends World
 {
     private int cicloAtual = 0;
-    private PlacarPong1 pontuacaoUm;
-    private PlacarPong2 pontuacaoDois;
+    public static PlacarPong1 pontuacaoUm;
+    public static PlacarPong2 pontuacaoDois;
     private PlacarMatch numeroPartidas;
     private Integer ciclo = 0;
     public PlacarTime placartime;
@@ -63,6 +63,14 @@ public class Jogo extends World
         return this.placartime.valor == 2;
     }
 
+    public PlacarPong1 valorPlacar1(){
+        return this.pontuacaoUm;
+    }
+    
+    public PlacarPong2 valorPlacar2(){
+        return this.pontuacaoDois;
+    }
+    
     public void criadorDeModificador(){
         if(cicloAtual() % 1500== 0){
             int x = Greenfoot.getRandomNumber(560) + 78  ;

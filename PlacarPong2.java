@@ -34,4 +34,9 @@ public class PlacarPong2 extends Actor
     private String converteNumero(int valor){
        return String.format("%02d",valor);
      }
+     
+    public int getValor2(){
+        return this.pontuacaoDois;
+    } 
+     
 }

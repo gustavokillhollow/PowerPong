@@ -16,9 +16,10 @@ public class Ranking extends World
    
     public void act(){
         ligaSom();
-        Input();
         showText(nomeJogadores.getNome1(), 170, 133);
         showText(nomeJogadores.getNome2(), 170, 160);
+        showText(""+nomeJogadores.getPlacar1(), 525, 133);
+        showText(""+nomeJogadores.getPlacar2(), 525, 160);
     }
   
     private void prepare()
@@ -39,8 +40,5 @@ public class Ranking extends World
     public void desligaSom(){
        sound.stop();
     }
-    public void Input(){
-     
-     
-    }    
+
 }
