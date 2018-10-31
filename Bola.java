@@ -9,6 +9,7 @@ public class Bola extends Actor
     public int vDirection = 1;//Cima:-1 Baixo=1    
     public boolean controle = true;
     public int toquePorUltimo;
+    public int saidaBola = 0;
     
     public Bola(){
         GreenfootImage img = new GreenfootImage(18, 17);
@@ -73,6 +74,22 @@ public class Bola extends Actor
         }
     }
 
+    public void vaiBolaInicio(){
+        Jogo mundo = (Jogo) getWorld();
+        if(mundo.cicloAtual()>=193){
+            movimentoBola();
+        }
+        if(mundo.cicloAtual()>=193){
+            movimentoBola2();        
+        }
+        if(mundo.cicloAtual()>=193){
+            movimentoBola3();        
+        }        
+        if(mundo.cicloAtual()>=193){
+            movimentoBola4();        
+        }
+    }
+    
     public void vaiBola(){
         Jogo mundo = (Jogo) getWorld();
         if(mundo.cicloAtual()>193){
@@ -87,6 +104,24 @@ public class Bola extends Actor
             setLocation(newX,newY);
         }
     }
+    
+    public void movimentoBola2(){
+        int newX = getX() + hDirection * speed * -1;
+        int newY = getY() + vDirection * speed * -1;
+        setLocation(newX,newY);
+    }
+    
+    public void movimentoBola3(){
+        int newX = getX() + hDirection * speed * -1;
+        int newY = getY() + vDirection * speed * +1;
+        setLocation(newX,newY);
+    }
+    
+    public void movimentoBola4(){
+        int newX = getX() + hDirection * speed * +1;
+        int newY = getY() + vDirection * speed * -1;
+        setLocation(newX,newY);
+    }   
     
     public void changeDirection(){
         Pong pong = (Pong)getOneIntersectingObject(Pong.class);
