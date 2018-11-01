@@ -56,14 +56,6 @@ public class Jogo extends World
         return this.placartime.valor == 1; 
     }
 
-    public void criadorDeModificadorDeBoost(){
-        if(cicloAtual() %  900 == 0 ){
-            int x = Greenfoot.getRandomNumber(560) + 78  ;
-            int y = Greenfoot.getRandomNumber(310) + 40 ;
-            addObject(new ModificadorGanharPowerBoost(), x,y);        
-        }
-    }
-
     public boolean tempoQuaseZero(){
         return this.placartime.valor == 3;
     }
@@ -81,17 +73,11 @@ public class Jogo extends World
     }
     
     public void criadorDeModificador(){
-        if(cicloAtual() % 1500== 0){
+        if(cicloAtual() % 2500== 0){
             int x = Greenfoot.getRandomNumber(560) + 78  ;
             int y = Greenfoot.getRandomNumber(310) + 40 ;
             addObject(new ModificadorGanharPowerBoost(), x,y);
         }        
-
-        if(cicloAtual() %  1100 == 0 ){
-            int x = Greenfoot.getRandomNumber(560) + 78  ;
-            int y = Greenfoot.getRandomNumber(310) + 40 ;
-            addObject(new ModificadorGanharPowerBoost(), x,y);
-        }
     }
 
     public void criadorDeModificadorTamanhoDePad(){
